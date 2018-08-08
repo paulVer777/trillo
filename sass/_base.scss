@@ -17,7 +17,6 @@
 *::after,
 *::before {
     box-sizing: inherit;
-   
 }
 
 :root {
@@ -27,7 +26,7 @@
     //Thats why we declared it in a root pseudo class so it will be avaivable for all elements on our site.
     --color-primary: #eb2f64;
     --color-primary-light: #FF3366;
-    --color-primary-dark: #BA265D; 
+    --color-primary-dark: #BA265D;
     --color-grey-light-1: #faf9f9;
     --color-grey-light-2: #f4f2f2;
     --color-grey-light-3: #f0eeee;
@@ -36,12 +35,7 @@
     --color-grey-dark-2: #777;
     --color-grey-dark-3: #999;
     --color-white: #fff;
-
-    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
-
-
-
-    
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
 }
 
 html {
@@ -57,5 +51,5 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh; // minimum height is 100vh but it can be higher value, its not restriced by "min"
-    color:var(--color-grey-dark-2);
+    color: var(--color-grey-dark-2);
 }
