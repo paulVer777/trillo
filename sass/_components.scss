@@ -108,47 +108,32 @@
     margin-top: 3.5rem;
     &__item {
         position: relative;
-
-      &:not(:last-child){
-          margin-bottom: 1rem;
-      }
-
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
     }
     &__item::before {
         content: "";
         position: absolute;
-        top:0;
-        left:0;
-        height:100%;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 3px;
         background-color: var(--color-primary);
         transform: scaleY(0);
-        transition: 
-        
-        transform .2s,
-        width .4s cubic-bezier(1,0,0,1) .2s,// .2s is a delay;
+        transition: transform .2s, width .4s cubic-bezier(1, 0, 0, 1) .2s, // .2s is a delay;
         background-color .1s;
         ;
-        
-
         transform-origin: bottom; //it will start scale from bottom
-         
     }
-    &__item:active::before{
-background-color: var(--color-primary-light)
+    &__item:active::before {
+        background-color: var(--color-primary-light)
     }
-
-
-
-
-   &__item:hover::before,
-   &__item--active::before
-   {
-
-    transform: scaleY(1);
-    width: 100%;
-   }
-
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
     &__link:link,
     &__link:visited,
         {
@@ -158,8 +143,8 @@ background-color: var(--color-primary-light)
         padding: 1.5rem 3rem;
         display: flex;
         align-items: center;
-       z-index: 10;// z-index works only if the position is specified
-       position: relative;
+        z-index: 10; // z-index works only if the position is specified
+        position: relative;
     }
     &__icon {
         width: 1.75rem;
@@ -175,4 +160,99 @@ background-color: var(--color-primary-light)
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-4)
+}
+
+/////////////GALLERY
+.gallery {
+    display: flex; // the same effect we can achieve using floats and give the element width of 33.333%, then use clearfix on a parent element
+    &__photo {
+        width: 100%;
+        display: block;
+    }
+}
+
+/////////////HOTEL OVERVIEW /////////////////
+.overview {
+    display: flex;
+    border-bottom: 1px solid var(--color-grey-light-2);
+    align-items: center;
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+    }
+    &__stars {
+        display: flex;
+    }
+    &__location {
+        margin-left: auto; //it creates the space beetwen elements
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+        margin-right: .5rem;
+    }
+    &__rating {
+          background-color: var(--color-primary);
+           color:var(--color-white);
+           margin-left: 3rem;
+           padding: 0 2rem;
+           align-self: stretch;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           flex-direction: column;
+
+        &-count {
+            font-size: .8rem;
+            text-transform: uppercase;
+            margin-bottom: -3px;
+        }
+        &-average {
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+    }
+}
+
+//////BUTTON-INLINE/////////////@at-root
+.btn-inline {
+    border: none;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor; //border will have the same color as the text "color property"
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover {
+        color: var(--color-dark-1);
+    }
+    &:focus { // works when element is focused, focused after clicking it or selecting using keyboard
+        outline: none;
+        animation: pulse 1s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: none;
+        box-shadow: none;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-dark);
+    }
+    100% {
+        transform: none;
+        box-shadow: none;
+    }
 }
